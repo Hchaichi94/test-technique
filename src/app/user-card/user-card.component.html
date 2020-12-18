@@ -1,1 +1,21 @@
-<p>user-card works!</p>
+<div class=" border border-4 rounded" style="padding: 15px;margin: 15px;">
+  <form [formGroup]="saveForm" (ngSubmit)="onSubmit(user.id)">
+    <mat-icon style="float: right;" (click)="onDelete(user.id)"> delete_forever</mat-icon>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom</label>
+      <input type="text" class="form-control" value="{{user._nom}}" formControlName="_nom" >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Prenom</label>
+      <input type="text" class="form-control" value="{{user._prenom}}" formControlName="_prenom" >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre_enfants</label>
+      <input type="text" class="form-control" value="{{user._nombre_enfants}}" formControlName="_nombreEnfants">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

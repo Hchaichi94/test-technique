@@ -1,5 +1,11 @@
-<p>app works!</p>
-
-<app-config-side-bar></app-config-side-bar>
-
-<app-user-card></app-user-card>
+<mat-sidenav-container>
+  <mat-sidenav [opened]="opened" mode="side">
+    <app-config-side-bar [user]="user"></app-config-side-bar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)="LoadListUsersFromJson()" style="float: right;padding: 15px;" type="button"
+      class="btn btn-success">Load</button>
+    <app-list-users-card (openSideBar)="openSideBar($event)" [listUsers]="listUsers">
+    </app-list-users-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>
